@@ -1,0 +1,81 @@
+﻿@using aspFirstApp.Models
+@{
+    ViewBag.Title = "viewBooks";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+@{
+    if (Session["name"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+
+    }
+}
+<div class="col-lg-8 col-lg-offset-2" style="margin-top:120px;" id="i">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">VIEW BOOKS
+        </div>
+        <div class="panel-body">
+
+            <form role="form" class="form-horizontal col-lg-offset-8" name="vinform">
+                <div class="form-group " id="c">
+                    <label for="t1" class="col-lg-2 control-label"></label>
+                    <div class=" input-group">
+                        <input type="text" class="form-control" name="t1" onkeyup="sendInfo()" placeholder="Search books">
+                        <span class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+
+
+        </div>
+        </form>
+        <div class="table-responsive margin" style="width: 800px; margin-left: 20px">
+            <table class="table  table-hover table-hover" id="tb">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>ISBN</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+    <span id="res"></span>
+
+    @{
+    foreach (var book in Model)
+    {
+        <tr height="40">
+            <td>@book.Id</td>
+            <td>@book.cname</td>
+            <td>@book.isbn</td>
+            <td>Available</td>
+            <td>@book.Category.name</td>
+            <td>
+
+
+                <!--<a href='?p=<%=r.getInt(1)%>' class='btn btn-primary'>Request</a>-->
+                <div class=" btn-group">
+                    <a href='bookRequest?p=@book.Id' ='Sign In' class='btn btn-success '>Request</a>
+                    
+                </div>
+
+            </td>
+        </tr>
+      }
+    }
+
+
+
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

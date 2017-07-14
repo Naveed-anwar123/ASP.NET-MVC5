@@ -1,0 +1,70 @@
+/* navbar */
+
+
+
+
+
+
+
+
+
+
+
+#grad1 {
+    height: 580px;
+	padding:none;
+	margin:0px;
+    background: linear-gradient(to top left,rgb(70, 182, 234),rgb(242, 179, 200)); /* Standard syntax (must be last) */
+}
+#grad2{
+position:absolute;
+height:480px;
+width:330px;
+margin-top:100px;
+margin-left:400px;
+background: linear-gradient(to top left,rgb(70, 182, 234),rgb(242, 179, 200)); /* Standard syntax (must be last) */
+}
+#grad{
+position:absolute;
+height:45px;
+width:1366px;
+background: #156186;
+}
+form{
+margin-top:100px;
+
+}
+label{
+color:#156186;
+font-size:12pt;}
+.title{
+color:#156186;
+margin-top:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.padd{
+		padding:20px 70px;
+        
+
+	}	
+	li a:hover{
+		border-bottom: 2px solid gray;
+		transition: 0.7s;
+		
+	}
+	li a{
+		font-family: hobo std;
+	}
+
+
+

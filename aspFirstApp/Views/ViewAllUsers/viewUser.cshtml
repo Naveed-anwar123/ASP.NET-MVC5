@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "viewUser";
+    Layout = "~/Views/Shared/BooksLayout.cshtml";
+}
+@{
+    if (Session["id"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+
+    }
+}
+<div class="col-lg-8 col-lg-offset-2" style="margin-top:120px;">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">View All Users</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="table-responsive margin" style="width: 800px; margin-left: 20px">
+                <table class="table  table-hover table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>Email Address</th>
+                            <th>Batch</th>
+                            <th>Username</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        
+                        
+
+                            @{
+                                foreach (var r in ViewBag.a)
+                                {
+                        <tr>
+                                    <td>@r.email</td>
+                                    <td>@r.batch</td>
+                                    <td>@r.fname</td>
+
+
+
+                                    <td><a href='/ViewAllUsers/viewDetails?p=@r.Id' class='btn btn-primary'>View Details<span class="glyphicon glyphicon-arrow-right"></a></td>
+
+                            </tr>
+                                }
+                            }
+
+                        
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

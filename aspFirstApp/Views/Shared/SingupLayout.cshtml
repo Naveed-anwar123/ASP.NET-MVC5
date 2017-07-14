@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="~/Content/css/bootstrap1.css" rel="stylesheet">
+    <script src="~/Scripts/sign_up.js"></script>
+   
+    <style>
+        .navbar-fixed-top {
+            height: 14px; /* Whatever you want. */
+        }
+
+       
+
+        .panel {
+            z-index: 13;
+        }
+
+            .panel{
+                box-shadow: 0 3px 20px rgba(0, 0, 0, 0.12);
+            }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Login/Index" class="active" onclick="change()" id="chang"> SignIn</a></li>
+                <li><a href="/Signup/Signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    @RenderBody()
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~Content/css/bootstrap.js"></script>
+    
+</body>
+</html>

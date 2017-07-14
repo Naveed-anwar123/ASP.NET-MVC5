@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link href="~/Content/css/bootstrap1.css" rel="stylesheet">
+    <script type="text/javascript" src="~/Scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="~/Scripts/login.js"></script>
+    <script>
+      
+		//{"background":"linear-gradient(to right, #085078 , #85D8CE)"}
+
+		$(document).ready(function () {
+
+		    
+			var i =0;
+			$(".panel").hide(10);
+			$("div:last").hide(10);
+			setInterval(function(){
+				$(".panel").slideDown("swing");
+			},30);
+
+			setInterval(function(){
+				if(i==0){
+					$("div.ab").fadeOut(2000);
+					$("div.abc").fadeIn(2000);
+					i++;
+				}
+				else if(i==1){
+					$("div.abc").fadeOut(2000);
+					$("div.ab").fadeIn(2000);
+					i--;
+				}
+			},3000);
+		});
+
+
+    </script>
+    <style>
+        .navbar-fixed-top {
+            height: 14px; /* Whatever you want. */
+        }
+
+        overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        
+        .ab {
+            background: linear-gradient(to right, #DBD5A4, #649173);
+            
+            margin: 0;
+            width: 1366px;
+            height: 630px;
+            margin-top: -45px;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .abc {
+            position: absolute;
+            background: linear-gradient(to left, #DBD5A4, #649173);
+            margin: 0;
+            width: 1366px;
+            height: 630px;
+            margin-top: -45px;
+            z-index: -1;
+            clear: both;
+        }
+
+        .panel {
+            z-index: 13;
+            margin-top:50px;
+        }
+            .panel:hover {
+                box-shadow: 0 3px 20px rgba(0, 0, 0, 0.12);
+            }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Login/Index" class="active" onclick="change()" id="chang"> SignIn</a></li>
+                <li><a href="/Signup/Signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/css/bootstrap.js"></script>
+    <div class="ab"></div>
+    <div class="abc"></div>
+    <script type="text/javascript" src="~/Scripts/login.js"></script>
+</body>
+</html>

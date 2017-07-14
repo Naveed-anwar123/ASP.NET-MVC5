@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "viewDetails";
+    Layout = "~/Views/Shared/BooksLayout.cshtml";
+}
+
+<div class="col-lg-8 col-lg-offset-2" style="margin-top:120px;">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">Details</h3>
+        </div>
+        <div class="panel-body">
+
+          
+
+
+            
+            <div>
+                <img src="../1.png">
+            </div>
+            <br />
+            <br />
+           @{
+    foreach (var r in ViewBag.a)
+    {
+        <div style="text-align:left">
+            
+            <table>
+                <tr>
+                    <th>First name</th>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                    <td>@r.fname</td>
+                </tr>
+
+                <tr>
+                    <th>Last name</th>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                    <td>@r.lname</td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                    <td>@r.email</td>
+                </tr>
+
+                <tr>
+                    <th>Batch</th>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                    <td>@r.batch</td>
+                </tr>
+
+                <tr>
+                    <th>Gender</th>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                    <td>@r.gender</td>
+                </tr>
+            </table>
+        </div>
+
+    }
+}
+
+       
+            <a href="/ViewAllUsers/viewUser" class="btn btn-default pull-right">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                Go Back
+            </a>
+
+
+           
+
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,118 @@
+﻿@using aspFirstApp.Models
+           
+@{
+    ViewBag.Title = "viewRecord";
+    Layout = "~/Views/Shared/UserHome.cshtml";
+}
+
+
+@{
+    if (Session["name"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+
+    }
+}
+<script src="~/Scripts/pdf.js"></script>
+<script>
+    function simple() {
+        var doc = new jsPDF();
+        var id = $("#idd").val();
+        var email = $("#email").val();
+        var name = $("#name").val();
+        var issue = $("#issue").val();
+        alert(id);
+        doc.text(20, 20, "Id : " + id);
+        doc.text(80, 20, "Email : " + email);
+        doc.text(20, 40, "Name : " + name);
+        doc.text(80, 40, "Issue date : " + issue);
+        doc.addPage();
+        
+        doc.save('Return.pdf');
+    }
+
+
+</script>
+<div class="col-lg-8 col-lg-offset-2" style="margin-top:120px;" id="i">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">View History
+        </div>
+        <div class="panel-body">
+
+            <form role="form" class="form-horizontal col-lg-offset-8" name="vinform">
+               
+
+
+        </div>
+        </form>
+        <div class="table-responsive margin" style="width: 800px; margin-left: 20px">
+            <table class="table  table-hover table-hover" id="tb">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Book Name</th>
+                        <th>Issue date</th>
+                        <th>Return date</th>
+                        <th>Fine</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <span id="res"></span>
+                    @model IEnumerable<aspFirstApp.Models.Requests>
+                    @{
+                        foreach(var request in Model )
+                        {
+                            if (@request.issue_date != null)
+                            {
+                                
+                            
+                            <tr height="40">
+                                
+                              
+                                <td >@request.Id</td>
+                                <td >@request.email</td>
+                                <td >@request.Book.cname</td>
+                                <td >@request.issue_date</td>
+                                <td>
+                                    <form>
+
+                                        <input type="hidden" id="idd" value="@request.Id" />
+                                        <input type="hidden" id="email" value="@request.email" />
+                                        <input type="hidden" id="name" value="@request.Book.cname" />
+                                        <input type="hidden" id="issue" value="@request.issue_date" />
+                                    </form>
+
+                                    <!--<a href='?p=<%=r.getInt(1)%>' class='btn btn-primary'>Request</a>-->
+                                    <div class=" btn-group">
+                                      
+                                       @DateTime.Now.AddDays(7)
+                                     
+                                                                             @*if(@DateTime.Compare(@DateTime.Now ,  )
+        {
+         @request.issue_date.ToString().Split('/')[0].
+            500
+        }
+        else
+        {
+        500
+        }*@</div>
+
+                                </td>
+                                <td>None</td>
+                                <th><button onclick="simple()" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> get pdf</button></th>
+                            </tr>
+                        }
+                        }
+                    }
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

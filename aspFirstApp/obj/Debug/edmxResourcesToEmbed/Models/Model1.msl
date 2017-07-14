@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Book_CategoryStoreContainer" CdmEntityContainer="DB3">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="Book_Category.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table">
+      <EntityTypeMapping TypeName="Book_Category.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book">
+      <EntityTypeMapping TypeName="Book_Category.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="isbn" ColumnName="isbn" />
+          <ScalarProperty Name="catId" ColumnName="catId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="signup">
+      <EntityTypeMapping TypeName="Book_Category.signup">
+        <MappingFragment StoreEntitySet="signup">
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="roll" ColumnName="roll" />
+          <ScalarProperty Name="batch" ColumnName="batch" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="Book_Category.Requests">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="singup">
+      <EntityTypeMapping TypeName="Book_Category.singup">
+        <MappingFragment StoreEntitySet="singup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
